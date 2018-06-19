@@ -1,0 +1,17 @@
+{
+  "name": "bitfinex-data-extractor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/server/app.js",
+    "tunnel": "lt --port 3400"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "json2csv": "^4.1.2",
+    "request": "^2.83.0"
+  }
+}
