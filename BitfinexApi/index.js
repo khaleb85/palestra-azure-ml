@@ -6,7 +6,7 @@ const CsvConverter = require('./src/data-converter/csv-converter');
 let date = bitfinexConfig.startDate;
 const can = new Candles();
 
-can.getCandles(date, true, candles => {
+can.getCandles(date, true, c => {
     const converter = new CsvConverter();
-    converter.convertToCsv(candles);
+    converter.convertToCsv(c);
 });

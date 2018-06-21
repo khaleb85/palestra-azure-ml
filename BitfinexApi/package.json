@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "update": "node index.js",
     "start": "node ./src/server/app.js",
     "tunnel": "lt --port 3400"
   },

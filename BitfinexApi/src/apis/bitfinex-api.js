@@ -20,20 +20,22 @@ class BitFinexApi {
         });
     }
 
-    getCandlesByDate() {
-        request.get(`${baseUrl}/candles/trade:${timeFrame}:${symbol}/last`, (error, response, body) => {
+    getLastCandle(callback) {
+        request.get(`${config.baseUrl}/candles/trade:${config.timeFrame}:${config.symbol}/last`, (error, response, body) => {
+			console.log(error);
             if (error)
                 throw new error();
     
             const data = JSON.parse(body);
-            console.log({
-                MTS: data[0], 
+			const back = {
+                MTS: new Date(parseInt(data[0])), 
                 OPEN: data[1],
                 CLOSE: data[2],
                 HIGH: data[3],
                 LOW: data[4],
                 VOLUME: data[5]
-            });
+            };
+			callback(back);
         });
     }
 }
